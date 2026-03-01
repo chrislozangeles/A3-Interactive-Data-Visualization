@@ -13,7 +13,7 @@
 		</h1>
 
 		<p>
-			<strong>Christian Emmanuel Lopez Angeles</strong> — <em>chris_la@mit.edu</em>
+			<strong>Christian Lopez Angeles</strong> — <em>YOUR_MIT_EMAIL@mit.edu</em>
 		</p>
 	</header>
 
@@ -22,7 +22,7 @@
 			<h2>Reading & Critique</h2>
 
 			<figure>
-				<img src="https://vis-society.github.io/assets/imgs/covid-spiral.png" alt="" />
+				<img src="https://vis-society.github.io/assets/imgs/covid-spiral.png" alt="New Covid-19 cases, United States (spiral visualization)" />
 			</figure>
 
 			<p>
@@ -30,9 +30,9 @@
 			</p>
 
 			<ul>
-				<li>INSIGHT 1</li>
-				<li>INSIGHT 2</li>
-				<li>INSIGHT 3</li>
+				<li><strong>Strong seasonality:</strong> the largest surges occur around winter (roughly Dec–Jan), suggesting recurring seasonal waves.</li>
+				<li><strong>Extreme early-2022 spike:</strong> the outermost segment rises sharply in Jan 2022, indicating a much larger wave than earlier years (Omicron).</li>
+				<li><strong>Multiple waves in 2021:</strong> the 2021 loop shows several distinct rises (mid-year and late-year), rather than a single peak.</li>
 			</ul>
 
 			<p>
@@ -40,17 +40,21 @@
 			</p>
 
 			<p>
-				DESCRIBE YOUR CRITIQUE IN 1-2 PARAGRAPHS.
+				The spiral form is expressive for communicating cyclicality: mapping the calendar onto a circular layout makes it easy to notice that waves tend to recur at similar times of year, and the use of a smoothed trend line helps reveal the underlying pattern amid noisy daily reporting. The design is visually engaging and supports a narrative goal suited to a general-audience piece, making the winter surge feel salient and memorable.
+			</p>
+
+			<p>
+				However, the polar encoding makes precise comparisons difficult. Distances along the radial axis are harder to judge than a standard linear scale, and comparing the same month across years requires comparing values at different radii, which can obscure magnitude differences. The band around the curve can also be ambiguous for non-expert readers (it is not immediately clear what range or uncertainty it represents), and the visualization provides limited quantitative anchors to help estimate values. A redesign could preserve the seasonality insight while improving scale readability, clarifying encodings with stronger legends/labels, and adding context (e.g., deaths or CFR) to support interpretation beyond case counts alone.
 			</p>
 		</section>
 
 		<section>
 			<h2>Visualization Sketches</h2>
 
-      <figure>
-				<img src="sketch1.png" alt="" />
+			<figure>
+				<img src="sketch1.png" alt="Sketch 1: Linear time-series of 7-day average COVID-19 cases" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+					This sketch replaces the spiral with a traditional linear time-series of 7-day average new confirmed cases from 2020–2022. By using a standard time axis and a clearly scaled y-axis, it prioritizes magnitude comparison across waves and makes the early-2022 peak easy to quantify. The design trades some of the spiral’s cyclical aesthetic for interpretability and precision.
 				</figcaption>
 			</figure>
 
@@ -59,15 +63,15 @@
 			</p>
 
 			<ul>
-				<li>RATIONALE 1</li>
-				<li>RATIONALE 2</li>
-				<li>RATIONALE 3</li>
+				<li>I replaced the polar layout with a linear timeline to improve magnitude comparability and make it easier to locate specific time periods.</li>
+				<li>The 7-day moving average reduces daily reporting noise and mitigates negative corrections in the dataset.</li>
+				<li>This design emphasizes clear quantitative reading of peaks/troughs, but downplays the circular seasonality narrative that the original spiral highlights.</li>
 			</ul>
 
 			<figure>
-				<img src="sketch2.png" alt="" />
+				<img src="sketch2.jpeg" alt="Sketch 2: Monthly cases (bars) with monthly deaths (bubbles), small multiples by year" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+					This sketch aggregates daily data into monthly totals and uses small multiples (2020, 2021, 2022) for structured comparison. Bars encode monthly confirmed cases, and bubbles (size + labels) encode monthly deaths to add severity context without a second quantitative axis. The shared scale makes cross-year magnitude differences clear, while the deaths layer highlights that mortality does not always scale proportionally with cases.
 				</figcaption>
 			</figure>
 
@@ -76,15 +80,15 @@
 			</p>
 
 			<ul>
-				<li>RATIONALE 1</li>
-				<li>RATIONALE 2</li>
-				<li>RATIONALE 3</li>
+				<li>I aggregated to monthly totals to reduce daily volatility and make seasonal patterns easier to compare.</li>
+				<li>Small multiples preserve within-year seasonality while enabling direct year-to-year comparisons on a consistent scale.</li>
+				<li>Bubbles plus numeric labels communicate deaths alongside cases, adding severity context without introducing a potentially confusing secondary y-axis for deaths.</li>
 			</ul>
 
 			<figure>
-				<img src="sketch3.png" alt="" />
+				<img src="sketch3.jpeg" alt="Sketch 3: Polar cases with CFR annotations, segmented by year and month" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+					This sketch revisits the polar layout but adds clearer quantitative scaffolding. The radial axis encodes the 7-day average of cases with reference rings (1M, 2M, 5M) for magnitude anchors, and each month is annotated with Case Fatality Rate (CFR) to add a severity dimension. The goal is to preserve seasonality while improving interpretability and providing context beyond case counts.
 				</figcaption>
 			</figure>
 
@@ -93,19 +97,19 @@
 			</p>
 
 			<ul>
-				<li>RATIONALE 1</li>
-				<li>RATIONALE 2</li>
-				<li>RATIONALE 3</li>
+				<li>I retained the polar structure to preserve the strong seasonal narrative of the original, while explicitly separating 2020, 2021, and 2022 and marking month boundaries.</li>
+				<li>Reference circles (1M, 2M, 5M cases) reduce ambiguity in reading radial magnitude and support more quantitative interpretation.</li>
+				<li>I added CFR as an outer annotation layer to reflect severity, but this increases information density and requires careful design to avoid cognitive overload.</li>
 			</ul>
 		</section>
 
 		<section>
 			<h2>Final Visualization Design</h2>
-      
+
 			<figure>
-				<img src="FinalVisualization.png" alt="" />
+				<img src="FinalVisualization.png" alt="Final visualization: Weekly cases (bars), deaths (color), and CFR (line), 2020–2022" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+					This visualization summarizes U.S. COVID-19 dynamics from 2020–2022 using weekly totals. Bar height encodes weekly new confirmed cases, bar color is binned by weekly deaths to add severity context, and the dashed line shows the (smoothed) weekly case fatality rate (CFR = deaths/cases). The design highlights the outsized Omicron surge in early 2022 and shows how deaths and CFR patterns differ from raw case volume across waves.
 				</figcaption>
 			</figure>
 
@@ -115,14 +119,12 @@
 			<h2>Final Writeup</h2>
 
 			<p>
-        DESCRIBE YOUR RATIONALE TO JUSTIFY THE DECISIONS FOR YOUR FINAL DESIGN.
-				WHAT ARE YOU TRYING TO CONVEY, AND HOW DOES YOUR DESIGN FACILITATE THIS?
-      </p>
+				This visualization is designed to communicate how COVID-19 transmission intensity, mortality, and relative severity evolved differently between 2020 and 2022. Weekly confirmed cases are encoded as bars to emphasize volume and temporal continuity, while bar color represents weekly deaths using discrete bins to provide an additional severity layer without introducing a third vertical axis. The dashed line encodes the smoothed weekly case fatality rate (CFR), computed as deaths divided by cases, and plotted on a secondary percentage axis. Together, these encodings allow the reader to compare absolute case magnitude with mortality burden and relative fatality. The design highlights the unprecedented surge in cases during early 2022 (Omicron), while showing that deaths and CFR did not scale proportionally, revealing a divergence between infection volume and relative severity over time.
+			</p>
 
 			<p>
-        REFLECT ON HOW YOUR FINAL DESIGN DOES OR DOES NOT ADDRESS YOUR ORIGINAL CRITIQUE.
-				WHAT TENSIONS OR TRADEOFFS DID YOU ENCOUNTER? WHAT DID NOT WORK OUT AS ANTICIPATED?
-      </p>
+				The choice of weekly aggregation reduces daily reporting noise and clarifies macro-level wave structure, while the 3-week smoothing of CFR mitigates volatility caused by reporting delays and small denominators. Color was selected to encode deaths rather than cases to avoid redundancy and to emphasize severity differences within similarly sized waves. However, combining three variables in a single chart increases cognitive load and may downplay finer monthly variation or lag effects between cases and deaths. Early 2020 CFR values may also appear inflated due to limited testing and reporting artifacts, a known limitation of case-based fatality metrics. Compared to earlier sketches, this final design addresses critiques about interpretability and scale reference by using a linear time axis, consistent labeling, and explicit annotation, while acknowledging the tradeoff between narrative richness and visual complexity.
+			</p>
 		</section>
 	</main>
 </body>
