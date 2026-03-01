@@ -40,7 +40,18 @@
 			</p>
 
 			<p>
-				The spiral form is expressive for communicating cyclicality: mapping the calendar onto a circular layout makes it easy to notice that waves tend to recur at similar times of year, and the use of a smoothed trend line helps reveal the underlying pattern amid noisy daily reporting. The design is visually engaging and supports a narrative goal suited to a general-audience piece, making the winter surge feel salient and memorable.
+			 The visualization is highly expressive in communicating cyclicality and seasonality. By mapping time onto a spiral, the design makes it intuitive 
+			 to recognize that waves tend to recur at similar points in the calendar year. It is also visually striking and engaging; the creative spiral form 
+			 immediately captures attention and encourages readers to explore the graphic more closely. The use of a 7-day average smooth line is appropriate for highly variable data, helping the viewer focus on overall trends and reduce the noise in the data. 
+			 Structuring 2020, 2021, and 2022 as successive loops allows for qualitative comparison across years, and the visualization clearly serves a strong narrative 
+			 purpose rather than functioning as a purely decorative chart.
+
+            However, the polar format introduces tradeoffs that affect precision and interpretability. Radial scales can make magnitude comparisons difficult, as viewers 
+			often perceive area and curvature rather than exact radial distance. Comparing the same month across years (e.g., April 2021 vs. April 2022) requires interpreting 
+			values at different radii, which complicates direct quantitative assessment. The red band may also be ambiguous to a general audience—its exact meaning 
+			(range, variability, or uncertainty) is not entirely explicit—and additional numeric reference points could better ground magnitude interpretation. 
+			Moreover, the starting point and reading direction are less intuitive than in a standard linear timeline, potentially increasing the mental load required for first-time viewers. 
+			While the spiral enhances storytelling and visual appeal, it sacrifices some analytical clarity, highlighting a tension between visual impact and precise comparison
 			</p>
 
 			<p>
@@ -102,7 +113,7 @@
 			<ul>
 				<li>I retained the polar structure to preserve the strong seasonal narrative of the original, while explicitly separating 2020, 2021, and 2022 and marking month boundaries.</li>
 				<li>Reference circles (1M, 2M, 5M cases) reduce ambiguity in reading radial magnitude and support more quantitative interpretation.</li>
-				<li>Monthly Case Fatality Rate (RFT) values were included, the % of deaths among monthly cases, to introduce a second dimension of severity, addressing the limitation that raw case counts alone do not capture the pandemic’s relative impact.<li>
+				<li>Monthly Case Fatality Rate (RFT) values were included, the % of deaths among monthly cases, to introduce a second dimension of severity, addressing the limitation that raw case counts alone do not capture the pandemic’s relative impact.</li>
 				<li>Adding the CFR as an outer annotation layer can reflect severity, but this increases information density and requires careful design to avoid cognitive overload.</li>
 			</ul>
 		</section>
